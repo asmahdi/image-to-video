@@ -10,6 +10,17 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>10</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>13</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Image to GIF</string>
   </property>
@@ -27,7 +38,17 @@
      <number>-1</number>
     </property>
     <item row="4" column="1" colspan="2">
-     <widget class="QSpinBox" name="scale_spinBox"/>
+     <widget class="QSpinBox" name="scale_spinBox">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>50</number>
+      </property>
+     </widget>
     </item>
     <item row="3" column="1" colspan="2">
      <widget class="QSpinBox" name="duration_spinBox">
@@ -127,7 +148,7 @@
        <font>
         <pointsize>12</pointsize>
         <italic>false</italic>
-        <kerning>false</kerning>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="styleSheet">

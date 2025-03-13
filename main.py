@@ -5,13 +5,13 @@ from PyQt5.QtCore import Qt
 from PyQt5 import uic 
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
-from gui import UI_Elements
+from gui import Ui_gui
 
 VERSION = "1.0"
 
    
 
-class GifCreator(QWidget, UI_Elements):
+class GifCreator(QWidget, Ui_gui):
 
     image_types = ["png", "jpg"]
 

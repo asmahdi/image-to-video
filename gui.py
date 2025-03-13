@@ -11,10 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class UI_Elements(object):
+class Ui_gui(object):
     def setupUi(self, gui):
         gui.setObjectName("gui")
         gui.resize(500, 300)
+        gui.setSizeIncrement(QtCore.QSize(10, 0))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        gui.setFont(font)
         self.gridLayoutWidget = QtWidgets.QWidget(gui)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 10, 481, 281))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -22,9 +26,10 @@ class UI_Elements(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
         self.scale_spinBox = QtWidgets.QSpinBox(self.gridLayoutWidget)
-        self.scale_spinBox.setObjectName("scale_spinBox")
-        self.scale_spinBox.setProperty("value", 50)
+        self.scale_spinBox.setMinimum(1)
         self.scale_spinBox.setMaximum(100)
+        self.scale_spinBox.setProperty("value", 50)
+        self.scale_spinBox.setObjectName("scale_spinBox")
         self.gridLayout.addWidget(self.scale_spinBox, 4, 1, 1, 2)
         self.duration_spinBox = QtWidgets.QSpinBox(self.gridLayoutWidget)
         self.duration_spinBox.setMaximum(10000)
@@ -71,7 +76,7 @@ class UI_Elements(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setItalic(False)
-        font.setKerning(False)
+        font.setKerning(True)
         self.status_label.setFont(font)
         self.status_label.setStyleSheet("color: rgb(150, 150, 150);")
         self.status_label.setObjectName("status_label")
