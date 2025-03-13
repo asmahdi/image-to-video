@@ -1,15 +1,17 @@
 import os
-from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
-                             QLabel, QLineEdit, QPushButton, QFileDialog, QSpinBox, QDoubleSpinBox)
-from PyQt5.QtCore import Qt
+import sys
+from PyQt5.QtWidgets import (QApplication, QWidget, QFileDialog)
+from PyQt5.QtCore import QtCore
 from PyQt5 import uic 
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
 from gui import Ui_gui
 
-VERSION = "1.0"
+VERSION = "0.1.0-alpha"
+os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+qapp = QApplication(sys.argv)
+qapp.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
 
-   
 
 class GifCreator(QWidget, Ui_gui):
 
