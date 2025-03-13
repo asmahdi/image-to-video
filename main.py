@@ -1,7 +1,7 @@
 import os
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QFileDialog)
-from PyQt5.QtCore import QtCore
+from PyQt5.QtCore import Qt
 from PyQt5 import uic 
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
@@ -10,7 +10,7 @@ from gui import Ui_gui
 VERSION = "0.1.0-alpha"
 os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
 qapp = QApplication(sys.argv)
-qapp.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
+qapp.setAttribute(Qt.AA_EnableHighDpiScaling)
 
 
 class GifCreator(QWidget, Ui_gui):
@@ -31,6 +31,7 @@ class GifCreator(QWidget, Ui_gui):
         self.type_ComboBox.addItems(self.image_types)
 
     def browse_folder(self):
+        
         folder = QFileDialog.getExistingDirectory(self, "Select Directory")
         if folder:
             self.inputPath_lineEdit.setText(folder)
