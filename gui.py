@@ -23,6 +23,8 @@ class UI_Elements(object):
         self.gridLayout.setObjectName("gridLayout")
         self.scale_spinBox = QtWidgets.QSpinBox(self.gridLayoutWidget)
         self.scale_spinBox.setObjectName("scale_spinBox")
+        self.scale_spinBox.setProperty("value", 50)
+        self.scale_spinBox.setMaximum(100)
         self.gridLayout.addWidget(self.scale_spinBox, 4, 1, 1, 2)
         self.duration_spinBox = QtWidgets.QSpinBox(self.gridLayoutWidget)
         self.duration_spinBox.setMaximum(10000)
